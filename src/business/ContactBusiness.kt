@@ -1,5 +1,8 @@
 package business
 
+import entity.ContactEntity
+import repository.ContactRepository
+
 class ContactBusiness {
 
     fun validate(name: String, phone: String) {
@@ -20,10 +23,14 @@ class ContactBusiness {
     }
 
     fun save(name: String, phone: String) {
+
         validate(name, phone);
+        ContactRepository.save(ContactEntity(name, phone))
     }
 
     fun delete(name: String, phone: String) {
+
         validateDelete(name, phone);
+        ContactRepository.delete(ContactEntity(name, phone))
     }
 }
