@@ -31,6 +31,4 @@ class ContactRepository {
             return contactList;
         }
     }
-
-
 }
